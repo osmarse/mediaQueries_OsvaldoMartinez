@@ -1,0 +1,141 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+}
+
+.nav{
+    background-color: #06005f;
+    color: white;
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.menu{
+    display: none;
+}
+
+.filtros{
+background-color: #f1f1f1;
+padding: 10px;
+grid-area: filtros;
+text-align: center;
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+
+.filtros select{
+    width: 150px;
+}
+
+.main{
+    padding: 10px;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.card img{
+    width: 80%;
+    display: flex;
+}
+
+.foto{
+    display: flex;
+    justify-content: center;
+}
+
+.modelo{
+    margin: 5px;
+}
+
+.card button{
+    width: 30%;
+    background-color: #06005f;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 15px;
+}
+
+.paginador{
+    background-color: #f1f1f1;
+    padding: 10px;
+    grid-area: paginador;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    align-items: center;
+    
+}
+
+.paginador button{
+    border-color: gray;
+    border-width: 1px;
+    background-color: rgb(159, 159, 214);
+    padding: 8px 8px;
+}
+
+.footer{
+    background-color: #06005f;
+    color: white;
+    padding: 10px;
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.grid{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+    'nav'
+    'filtros'
+    'main'
+    'paginador'
+    'footer';
+}
+
+@media (min-width: 576px){
+    .grid{
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+        'nav filtros'
+        'nav main'
+        'footer paginador';
+    }
+    .main{
+        padding: 10px;
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .fa-bars{
+        display: none;
+    }
+    .menu{
+        display: block;
+        text-align: center;
+        line-height: 40px;
+    }
+    .nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 30px;
+        text-align: center;
+    }
+    }
